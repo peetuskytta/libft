@@ -1,26 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/08 16:40:17 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/10 13:33:27 by pskytta          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
-size_t	(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	const size_t	dstlen;
-	const size_t	srclen;
+	size_t	ret;
 
-	dstlen = ft_strnlen(dst, size);
-	srclen = ft_strlen(src);
-	if (dstlen == size)
-		return (size + srclen);
-	if (srclen < size - dstlen)
-		ft_memcpy(dst + dstlen, src, size - srclen - 1);
-	else
-	{
-		ft_memcpy(dst + dstlen, src, size - dstlen - 1);
-		dst[size - 1] = '\0';
-	}
-	return (dstlen + srclen);
+	ret = ft_strlcpy(dst + ft_strlen(dst), src, dstsize);
+	return (ret);
 }
-
-int	main()
-{
-

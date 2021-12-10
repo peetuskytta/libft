@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 12:07:56 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/08 14:48:14 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/02 18:51:54 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/02 19:10:44 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strrev(char *str)
 {
-	size_t	i;
+	char	temp;
+	int		i;
+	int		k;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
+	k = ft_strlen(str) - 1;
+	while (i < k)
+	{
+		temp = str[i];
+		str[i] = str[k];
+		str[k] = temp;
+		k--;
 		i++;
-	return (s1[i] - s2[i]);
+	}
+	return (str);
 }

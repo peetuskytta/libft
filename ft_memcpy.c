@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 12:07:56 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/08 14:48:14 by pskytta          ###   ########.fr       */
+/*   Created: 2021/11/25 11:18:34 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/03 12:57:32 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	size_t	i;
+	char		*mydest;
+	const char	*mysource;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
-		i++;
-	return (s1[i] - s2[i]);
+	mydest = (char *)dst;
+	mysource = (const char *)src;
+	if ((mydest != NULL) && (mysource != NULL))
+	{
+		while (n > 0)
+		{
+			*(mydest++) = *(mysource++);
+			n--;
+		}
+	}
+	return (dst);
 }

@@ -1,22 +1,19 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/07 11:07:04 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/08 17:02:17 by pskytta          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#define SIZE 40
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {
-	if ((dest == NULL) && (src == NULL))
-		return (NULL);
-	ft_strcpy(dest + ft_strlen(dest), src);
-	return (dest);
-}
-
-int	main()
-{
-	char dest[SIZE] = "I Love ";
-	char src[] = "Pauliina soo much!";
-
-	ft_strncat(dest, src);
-	printf("\n%s\n\n", dest);
-	return (0);
+	ft_strcpy(s1 + ft_strlen(s1), s2);
+	return (s1);
 }

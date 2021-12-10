@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 12:07:56 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/08 14:48:14 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/02 13:53:10 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/10 10:55:00 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	char	*str1;
+	char	*str2;
+	int		CmpStatus;
 
-	i = 0;
-	if (n == 0)
+	CmpStatus = 0;
+	str1 = (char *)s1;
+	str2 = (char *)s2;
+	if (s1 == s2)
 		return (0);
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
-		i++;
-	return (s1[i] - s2[i]);
+	while (n > 0)
+	{
+		if (*str1 != *str2)
+		{
+			if (*str1 > *str2)
+				CmpStatus = 1;
+			else
+				CmpStatus = -1;
+		}
+		n--;
+		str1++;
+		str2++;
+	}
+	return (CmpStatus);
 }
