@@ -6,16 +6,13 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 17:33:25 by pskytta           #+#    #+#             */
-/*   Updated: 2021/11/25 17:57:01 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/15 14:39:37 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <ctype.h>
-
 int	ft_isprint(int c)
 {
-	if (c >= 1 && c <= 127)
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);

@@ -6,11 +6,9 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 17:23:29 by pskytta           #+#    #+#             */
-/*   Updated: 2021/11/29 17:29:48 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/14 13:17:54 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isalpha(int c)
 {

@@ -6,7 +6,7 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 13:48:47 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/10 10:53:56 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/17 18:48:02 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	char	*start;
+	size_t	i;
 
-	start = dst;
-	if ((dst == NULL) && (src == NULL))
-		return (NULL);
-	while (*src && len--)
+	i = 0;
+	if (len == 0)
+		return (dst);
+	while (len--)
 	{
-		*dst = *src;
-		dst++;
-		src++;
+		if (!(*src))
+			dst[i] = '\0';
+		else
+		{
+			dst[i] = *src;
+			src++;
+		}
+		i++;
 	}
-	*dst = '\0';
-	return (start);
+	return (dst);
 }

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 16:23:39 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/15 16:39:32 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/10 17:07:11 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/17 18:12:55 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	unsigned char	*src;
 
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i])
+	src = (unsigned char *)s;
+	while (n > 0)
 	{
-		s[i] = '\0';
-		i++;
+		if (*src == (unsigned char)c)
+			return ((void *)src);
+		src++;
+		n--;
 	}
+	return (NULL);
 }

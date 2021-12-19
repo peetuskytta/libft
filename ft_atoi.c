@@ -6,7 +6,7 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 16:53:14 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/10 13:10:31 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/17 15:15:29 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,14 @@ int	ft_atoi(const char *str)
 	while (ft_iswsp(str[i]))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
+	{
 		if (str[i] == '-')
 			sign = -1;
-	i++;
-	while (ft_isalnum(str[i]))
+		i++;
+	}
+	while (ft_isdigit(str[i]))
 	{
-		if (ft_isalpha(str[i]))
-			i++;
-		else if (ft_isdigit(str[i]))
-			result = result * 10 + (str[i] - '0');
+		result = result * 10 + (str[i] - '0');
 		i++;
 	}
 	return (sign * result);

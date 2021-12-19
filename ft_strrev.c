@@ -6,12 +6,11 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 18:51:54 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/02 19:10:44 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/10 17:14:39 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strrev(char *str)
 {

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 16:23:39 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/15 16:39:32 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/14 10:02:50 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/14 10:32:23 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	size_t	i;
+	unsigned int	i;
 
-	i = 0;
-	if (!s)
+	if (s == NULL || f == NULL)
 		return ;
-	while (s[i])
+	i = 0;
+	while (s[i] != '\0')
 	{
-		s[i] = '\0';
+		f(s + i);
 		i++;
 	}
 }

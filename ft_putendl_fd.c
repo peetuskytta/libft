@@ -6,7 +6,7 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 14:35:23 by pskytta           #+#    #+#             */
-/*   Updated: 2021/11/12 14:39:58 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/15 16:55:17 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
+	if (!s || !fd)
+		return ;
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }

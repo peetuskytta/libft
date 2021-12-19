@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 16:23:39 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/15 16:39:32 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/17 14:14:19 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/18 12:44:26 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
 
 	i = 0;
-	if (!s)
-		return ;
-	while (s[i])
-	{
-		s[i] = '\0';
+	while (s[i] != '\0')
 		i++;
-	}
+	while (i != 0 && s[i] != c)
+		i--;
+	if (s[i] == c)
+		return ((char *)s + i);
+	return (NULL);
 }

@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_word_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 16:23:39 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/15 16:39:32 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/19 13:09:39 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/19 13:18:56 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
-{
-	size_t	i;
+#define OFF 0
+#define ON 1
 
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i])
+size_t	ft_word_count(char const *str, char c)
+{
+	int				state;
+	unsigned int	count;
+
+	state = OFF;
+	count = 0;
+	while (*str != '\0')
 	{
-		s[i] = '\0';
-		i++;
+		if (*str == c)
+			state = OFF;
+		else if (state == OFF)
+		{
+			state = ON;
+			count++;
+		}
+		str++;
 	}
+	return (count);
 }

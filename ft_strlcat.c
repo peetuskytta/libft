@@ -5,17 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 16:40:17 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/10 13:33:27 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/13 16:21:52 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/13 16:26:37 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	ret;
+	size_t	j;
+	size_t	k;
 
-	ret = ft_strlcpy(dst + ft_strlen(dst), src, dstsize);
-	return (ret);
+	j = 0;
+	k = 0;
+	while (dst[j] && j < dstsize)
+		j++;
+	while ((src[k]) && ((j + k + 1) < dstsize))
+	{
+		dst[j + k] = src[k];
+		k++;
+	}
+	if (j != dstsize)
+		dst[j + k] = '\0';
+	return (j + ft_strlen(src));
 }

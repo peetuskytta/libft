@@ -6,15 +6,13 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 11:52:24 by pskytta           #+#    #+#             */
-/*   Updated: 2021/11/30 11:55:10 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/15 14:42:54 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 177)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

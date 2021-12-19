@@ -6,7 +6,7 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 15:03:09 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/02 15:04:55 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/16 15:44:10 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-		++i;
-	return (s1[i] - s2[i]);
+	while (s1[i] == s2[i] && s1[i] && s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

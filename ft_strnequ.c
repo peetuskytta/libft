@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 16:23:39 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/15 16:39:32 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/13 09:15:59 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/18 14:37:29 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i])
-	{
-		s[i] = '\0';
-		i++;
-	}
+	if (!s1 || !s2)
+		return (0);
+	if (ft_strncmp(s1, s2, n) == 0)
+		return (1);
+	else
+		return (0);
 }

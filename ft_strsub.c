@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 16:23:39 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/15 16:39:32 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/11 16:01:26 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/16 19:57:45 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	char			*ptr;
 
-	i = 0;
-	if (!s)
-		return ;
-	while (s[i])
-	{
-		s[i] = '\0';
-		i++;
-	}
+	ptr = ft_strnew(len);
+	if (!ptr || !s || start > ft_strlen(s))
+		return (NULL);
+	ptr = ft_strncpy(ptr, (const char *)s + start, len);
+	return (ptr);
 }

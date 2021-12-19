@@ -6,7 +6,7 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 11:06:27 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/07 12:02:36 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/15 16:23:04 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_memdel(void **ap)
 {
+	if (!ap)
+		return ;
 	free(*ap);
 	*ap = NULL;
 }

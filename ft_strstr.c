@@ -6,7 +6,7 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 12:25:21 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/10 11:03:22 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/16 11:53:26 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,15 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	size_t	n;
 
 	n = ft_strlen(needle);
-	while (*haystack)
+	if (n == 0)
+		return ((char *)haystack);
+	if (needle)
 	{
-		if (!ft_memcmp(haystack++, needle, n))
-			return ((char *)(haystack - 1));
+		while (*haystack)
+		{
+			if (!ft_memcmp(haystack++, needle, n))
+				return ((char *)(haystack - 1));
+		}
 	}
-	return (0);
+	return (NULL);
 }

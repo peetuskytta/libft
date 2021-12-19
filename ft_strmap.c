@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 16:23:39 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/15 16:39:32 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/14 10:38:02 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/15 16:50:25 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	size_t	i;
+	unsigned int	i;
+	char			*str;
 
-	i = 0;
 	if (!s)
-		return ;
-	while (s[i])
+		return (NULL);
+	i = 0;
+	str = ft_strnew(ft_strlen(s));
+	if (str == NULL)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		s[i] = '\0';
+		str[i] = f(s[i]);
 		i++;
 	}
+	str[i] = '\0';
+	return (str);
 }
