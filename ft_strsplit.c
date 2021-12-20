@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 11:02:47 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/19 14:12:01 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/20 13:23:08 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/20 13:23:08 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static void	ft_free_error(int nbr, char **res)
 {
@@ -39,12 +38,12 @@ static size_t	ft_word_size(char const *str, size_t i, char c)
 	return (len);
 }
 
-static void	**ft_allocate_fill(char const *s, char **res, char c)
+static void	ft_allocate_fill(char const *s, char **res, char c)
 {
 	size_t	i;
 	size_t	k;
 	size_t	w_size;
-	
+
 	i = 0;
 	k = 0;
 	while (s[i] != '\0')
@@ -59,15 +58,12 @@ static void	**ft_allocate_fill(char const *s, char **res, char c)
 				w_size = ft_word_size(s, i, c);
 				res[k] = ft_strsub(s, i, w_size);
 				if (!res[k])
-				{
 					ft_free_error(k, res);
-				}
 				i = i + w_size;
 				k++;
 			}
 		}
 	}
-	return (0);
 }
 
 char	**ft_strsplit(char const *s, char c)
@@ -84,23 +80,4 @@ char	**ft_strsplit(char const *s, char c)
 	ft_allocate_fill(s, result, c);
 	result[nbr] = 0;
 	return (result);
-}
-
-int	main()
-{
-	char	*ptr;
-	char	**new;
-	int	word;
-	int	i;
-
-	i = 0;
-	ptr = "";
-	word = ft_word_count(ptr, ' ');
-	new = (ft_strsplit(ptr, ' '));
-	while (word > i)
-	{
-		printf("%s\n", new[i]);
-		i++;
-	}
-	return (0);
 }
