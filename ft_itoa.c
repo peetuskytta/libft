@@ -6,7 +6,7 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:10:31 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/17 15:12:49 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/20 15:04:24 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,6 @@ static void	ft_putnumber(long n, char *str, int *i)
 	}
 	else
 		str[(*i)++] = n + '0';
-}
-
-static size_t	ft_nblen(long long n)
-{
-	size_t	i;
-
-	i = 1;
-	if (n < 0)
-	{
-		n = n * -1;
-		i++;
-	}
-	while (n > 9)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
 }
 
 char	*ft_itoa(int n)

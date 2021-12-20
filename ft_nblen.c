@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_nblen.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 11:18:34 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/20 16:41:26 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/20 15:03:28 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/20 15:03:28 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+size_t	ft_nblen(long long n)
 {
-	char		*mydest;
-	const char	*mysource;
+	size_t	i;
 
-	if ((dst == NULL) && (src == NULL))
-		return (NULL);
-	mydest = (char *)dst;
-	mysource = (const char *)src;
-	while (n > 0)
+	i = 1;
+	if (n < 0)
 	{
-		*mydest++ = *mysource++;
-		n--;
+		n = n * -1;
+		i++;
 	}
-	return (dst);
+	while (n > 9)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
 }

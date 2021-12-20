@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_is_wspace.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 11:18:34 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/20 16:41:26 by pskytta          ###   ########.fr       */
+/*   Created: 2021/12/20 17:02:37 by pskytta           #+#    #+#             */
+/*   Updated: 2021/12/20 17:02:37 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_is_wspace(int c)
 {
-	char		*mydest;
-	const char	*mysource;
+	unsigned int	i;
 
-	if ((dst == NULL) && (src == NULL))
-		return (NULL);
-	mydest = (char *)dst;
-	mysource = (const char *)src;
-	while (n > 0)
-	{
-		*mydest++ = *mysource++;
-		n--;
-	}
-	return (dst);
+	i = 0;
+	if ((c >= 9 && c <= 13) || (c == ' '))
+		return (1);
+	else
+		return (0);
 }
