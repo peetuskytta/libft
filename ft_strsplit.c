@@ -6,22 +6,11 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 13:23:08 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/20 13:23:08 by pskytta          ###   ########.fr       */
+/*   Updated: 2021/12/20 17:27:02 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static void	ft_free_error(int nbr, char **res)
-{
-	while (nbr >= 0)
-	{
-		if (res[nbr] != NULL)
-			ft_memdel((void **)res);
-		nbr--;
-	}
-	free(res);
-}
 
 static size_t	ft_word_size(char const *str, size_t i, char c)
 {
@@ -58,7 +47,7 @@ static void	ft_allocate_fill(char const *s, char **res, char c)
 				w_size = ft_word_size(s, i, c);
 				res[k] = ft_strsub(s, i, w_size);
 				if (!res[k])
-					ft_free_error(k, res);
+					ft_free_array(k, res);
 				i = i + w_size;
 				k++;
 			}

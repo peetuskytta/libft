@@ -6,7 +6,7 @@
 #    By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 13:05:41 by pskytta           #+#    #+#              #
-#    Updated: 2021/12/20 17:14:35 by pskytta          ###   ########.fr        #
+#    Updated: 2021/12/20 17:29:02 by pskytta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ NAME = libft.a
 
 SRC = ft_atoi.c \
 	ft_bzero.c \
+	ft_free_array.c \
 	ft_is_wspace.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
