@@ -11,49 +11,96 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static size_t	ft_word_lenght(char const *s, char c)
+static void	ft_free_error(int nbr, char **res)
+{
+	while (nbr >= 0)
+	{
+		if (res[nbr] != NULL)
+			ft_memdel((void **)res);
+		nbr--;
+	}
+	free(res);
+}
+
+static size_t	ft_word_size(char const *str, size_t i, char c)
+{
+	size_t	len;
+
+	len = 0;
+	while (str[i] == c)
+		i++;
+	while (str[i] != c && str[i] != '\0')
+	{
+		i++;
+		len++;
+	}
+	return (len);
+}
+
+static void	**ft_allocate_fill(char const *s, char **res, char c)
 {
 	size_t	i;
-
+	size_t	k;
+	size_t	w_size;
+	
 	i = 0;
-	while (*s)
+	k = 0;
+	while (s[i] != '\0')
 	{
-		if (*s != c)
-		{
-			s++;
+		if (s[i] == c)
 			i++;
-		}
 		else
-			return (i);
+		{
+			w_size = 0;
+			while (s[i] && s[i] != c)
+			{
+				w_size = ft_word_size(s, i, c);
+				res[k] = ft_strsub(s, i, w_size);
+				if (!res[k])
+				{
+					ft_free_error(k, res);
+				}
+				i = i + w_size;
+				k++;
+			}
+		}
 	}
-	return (i);
+	return (0);
 }
 
 char	**ft_strsplit(char const *s, char c)
 {
-	char	**split;
-	size_t	word_len;
-	size_t	i;
-	size_t	k;
+	char	**result;
+	size_t	nbr;
+
+	if (!s)
+		return (NULL);
+	nbr = ft_word_count(s, c);
+	result = (char **)malloc(sizeof(char *) * (nbr + 1));
+	if (!result)
+		return (NULL);
+	ft_allocate_fill(s, result, c);
+	result[nbr] = 0;
+	return (result);
+}
+
+int	main()
+{
+	char	*ptr;
+	char	**new;
+	int	word;
+	int	i;
 
 	i = 0;
-	k = 0;
-	split = (char **)malloc(sizeof(char *) * (ft_word_count(s, c) + 1));
-	if (!split || (!s || c == '\0'))
-		return (NULL);
-	while (k < ft_word_count(s, c) && split)
+	ptr = "";
+	word = ft_word_count(ptr, ' ');
+	new = (ft_strsplit(ptr, ' '));
+	while (word > i)
 	{
-		while (s[i] != '\0' && s[i] == c)
-			i++;
-		word_len = ft_word_lenght(&s[i], c);
-		split[k] = malloc(sizeof(**split) * (word_len + 1));
-		ft_strncpy(split[k], &s[i], word_len);
-		split[k][word_len] = '\0';
-		while (s[i] != '\0' && s[i] != c)
-			i++;
-		k++;
+		printf("%s\n", new[i]);
+		i++;
 	}
-	split[k] = NULL;
-	return (split);
+	return (0);
 }
