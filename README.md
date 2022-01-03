@@ -12,7 +12,7 @@ The first real project at Hive Helsinki is to create a static library containing
 
 During the project I realized the need for some shell scripts that make the life of 42 student easier with this project.
 
-- [ ] 1. **proto.sh**<br>This script updates the Makefile and libft.h header with the correct prototypes. Make sure you **READ** the instructions in the file before using the script.
+- [ ] 1. **proto.sh**<br>This script updates the Makefile and the .h headerfile with the correct prototypes. Make sure you **READ** the instructions in the file before using the script.
 
 - [ ] 2. **new_file.sh**<br>Run and see what happens. Make sure you **READ** the instructions.
 
