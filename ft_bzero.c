@@ -6,7 +6,7 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:06:51 by pskytta           #+#    #+#             */
-/*   Updated: 2021/11/25 15:55:02 by pskytta          ###   ########.fr       */
+/*   Updated: 2022/01/03 14:18:06 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	if (n > 0)
-	{
-		ft_memset(s, 0, n);
-	}
-	else
-		return ;
-	return ;
+	ft_memset(s, 0, n);
 }

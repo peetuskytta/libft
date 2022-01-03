@@ -6,7 +6,7 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:02:37 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/20 17:28:11 by pskytta          ###   ########.fr       */
+/*   Updated: 2022/01/03 14:57:07 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,5 @@
 
 int	ft_is_wspace(int c)
 {
-	unsigned int	i;
-
-	i = 0;
-	if ((c >= 9 && c <= 13) || (c == ' '))
-		return (1);
-	else
-		return (0);
+	return ((c >= 9 && c <= 13) || (c == ' '));
 }

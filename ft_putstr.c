@@ -6,7 +6,7 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:10:00 by pskytta           #+#    #+#             */
-/*   Updated: 2021/12/17 15:54:46 by pskytta          ###   ########.fr       */
+/*   Updated: 2022/01/03 13:06:41 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,7 @@
 
 void	ft_putstr(char const *s)
 {
-	int	i;
-
-	i = 0;
 	if (!s)
 		return ;
-	while (s[i])
-	{
-		ft_putchar(s[i]);
-		++i;
-	}
+	write(1, s, ft_strlen(s));
 }
