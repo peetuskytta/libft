@@ -6,7 +6,7 @@
 /*   By: pskytta <pskytta@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 11:52:22 by pskytta           #+#    #+#             */
-/*   Updated: 2022/01/04 15:08:30 by pskytta          ###   ########.fr       */
+/*   Updated: 2022/01/04 15:11:16 by pskytta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_strequ(char const *s1, char const *s2)
 {
 	if (!s1 || !s2)
-		return (NULL);
+		return (0);
 	if (ft_strcmp(s1, s2) == 0)
 		return (1);
 	else
