@@ -10,7 +10,7 @@ The first real project at Hive Helsinki is to create a static library containing
 
 ## Useful Shell
 
-During the project I realized the need for some shell scripts that make the life of 42 student easier with this project.
+During the project I realized the need for shell scripts that make the life of 42 student easier with this project.
 
 - [x] 1. **proto.sh**<br>This script updates the Makefile and the .h headerfile with the correct prototypes. Make sure you **READ** the instructions in the file before using the script.
 
