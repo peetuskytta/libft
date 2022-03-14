@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+** This function translates Ascii charcaters to integers, hence the name a(scii)toi(nteger).
+*/
+
 int	ft_atoi(const char *str)
 {
 	unsigned int	i;
