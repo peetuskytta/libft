@@ -6,8 +6,8 @@ The first real project at Hive Helsinki is to create a static library containing
 
 - ✅ Graded on 12/30/2021
 - ✅ Score: **100**
-- ✅ Retry: **1** after two peer evaluations.
+- ✅ Retry: **1** after two peer evaluations. Found edge cases for ft_strjoin.c and memory leaks in ft_strsplit.c for which I gave up and retried.
 
 ## Useful Shell
 
-Recommended to check these shell scripts as they might be useful for you if you're doing this project.
+I recommend to check these shell scripts as they might be useful for anyone doing this project.
