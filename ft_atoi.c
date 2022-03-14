@@ -14,6 +14,7 @@
 
 /*
 ** This function translates Ascii charcaters to integers, hence the name a(scii)toi(nteger).
+** It returns the first negative or positive integer from the given string.
 */
 
 int	ft_atoi(const char *str)
