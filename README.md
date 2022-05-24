@@ -1,10 +1,24 @@
 # libft
 
-42's libft project's objective is to re-code some of the most useful libc functions to create our own static library. This library is used in all of the projects during studies at 42 school. 
+42's libft project's objective is to re-code some of the most useful libc functions to create our own static library. This library is used in all of the projects during studies at 42 school.
 
 ## Sources
 
 In [sources](./sources) you will find all the `.c` files of this library project. In total there were more than 50 functions to be recoded, e.g.: [strcmp](./sources/ft_strcmp.c), [split](./sources/ft_strsplit.c).
+
+### What did I learn?
+
+1. Remember to free all dynamically allocated memory.
+2. Bash scripting.
+3. Basics of pointer arithmetics.
+4. Making sure that `char` arrays end in `\0`.
+5. Basics of Makefile.
+6. Writing clean and readable code.
+
+### What did I struggle with?
+1. Pointers, as it was hard to understand them at first.
+2. Memory leaks.
+3. Documenting.
 
 ## Bash Scripts
 
