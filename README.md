@@ -1,6 +1,6 @@
 # libft
 
-The first real project at Hive Helsinki is to create a static library containing useful functions, some of which were already recoded during the Basecamp (Piscine). This project is a fantastic way to take a look at how things are done under the hood as you are expected to recode basic functions that you'd otherwise use via dynamic library.
+The first project at Hive Helsinki is to create a static library containing useful functions, some of which were already recoded during the Basecamp (Piscine). This project is a fantastic way to take a look at how things are done under the hood as you are expected to recode basic functions that you'd otherwise use from a dynamic library.
 
 ## Status
 
