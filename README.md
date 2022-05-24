@@ -8,7 +8,7 @@ In [sources](./sources) you will find all the `.c` files of this library project
 
 ## Bash Scripts
 
-During the project I felt the need to automate some tasks. I achieved this by learning about bash scripts. Click here to see the [bash scripts](./useful_shell). The most useful was the [proto](./useful_shell/proto), which updates the protoypes to the header file and `.c` files to the Makefile.
+During the project I felt the need to automate some tasks. I achieved this by learning about bash scripts. Click here to see the [bash scripts](./useful_shell). The most useful was the [proto](./useful_shell/proto.sh), which updates the protoypes to the header file and `.c` files to the Makefile.
 
 Some of these scripts might be useful for someone doing this project. 
 
