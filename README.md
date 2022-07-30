@@ -8,7 +8,7 @@ In [sources](./sources) you will find all the `.c` source files of this project.
 
 ### How to use?
 
-run the following command in terminal of your choice `make` and you'll find `libft.a`.
+run the following command in terminal of your choice `make` which will compile the project and create `libft.a` library archive.
 
 ### What did I learn?
 
