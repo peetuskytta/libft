@@ -4,12 +4,16 @@
 
 ## Sources
 
-In [sources](./sources) you will find all the `.c` files of this library project. In total there were more than 50 functions to be recoded, e.g.: [strcmp](./sources/ft_strcmp.c), [split](./sources/ft_strsplit.c).
+In [sources](./sources) you will find all the `.c` source files of this project. In total there were more than 50 functions to be recoded, e.g.: [strcmp](./sources/ft_strcmp.c), [split](./sources/ft_strsplit.c).
+
+### How to use?
+
+run the following command in terminal of your choice `make` and you'll find `libft.a`.
 
 ### What did I learn?
 
-1. Remember to free all dynamically allocated memory.
-2. Bash scripting.
+1. To `free()` all dynamically allocated memory.
+2. Bash scripting for running tests.
 3. Basics of pointer arithmetics.
 4. Making sure that `char` arrays end in `\0`.
 5. Basics of Makefile.
@@ -18,7 +22,7 @@ In [sources](./sources) you will find all the `.c` files of this library project
 ### What did I struggle with?
 1. Pointers, as it was hard to understand them at first.
 2. Memory leaks.
-3. Documenting.
+3. Documenting the code.
 
 ## Bash Scripts
 
@@ -32,4 +36,4 @@ Some of these scripts might be useful for someone doing this project.
 
 - ✅ Graded on 12/30/2021
 - ✅ Score: **100**
-- ✅ Retry: **1** after two peer evaluations. Found edge cases for ft_strjoin.c and memory leaks in ft_strsplit.c for which I gave up and retried.
+- ✅ Retry: **1** after two peer evaluations. Peer evaluator found edge cases for ft_strjoin.c and memory leaks in ft_strsplit.c for which I gave up and retried.
